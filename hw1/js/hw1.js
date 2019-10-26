@@ -3,7 +3,7 @@
 let height = 40;
 let result = 0;
 
-result = height%2 > 0 ? "Нечетное число" : "Четное число";
+result = Math.abs(height%2) > 0 ? "Нечетное число" : "Четное число";
 console.log(result);
 // Задание 2
 m=8.5;
