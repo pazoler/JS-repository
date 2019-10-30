@@ -48,7 +48,7 @@ console.log(countDay(2));
 console.log(countDay(548));
 
 //Задание 4
-function getRandomArr(index, length=4, min=0, max=10) {
+function getRandomArr(length=4, min=0, max=10) {
 	let arr = [];
 	for (let i = 0; i<length; i++) {
 		arr[i] = Math.floor(Math.random()*(max-min+1))+min;
@@ -66,18 +66,25 @@ function sumArr( arr) {
 	return sum;
 }
 
-//Не получилось
+
+let arrArr = [];
+let maxSum = 0;
+let max = [];
+//number - число массивов
+function maxArr(number) {
+	for (let i = 0; i < number; i++) {
+		arrArr[i] = getRandomArr();
+		console.log(sumArr(arrArr[i]));
+		if (sumArr(arrArr[i]) > maxSum) {
+			maxSum = sumArr(arrArr[i]);
+			max = arrArr[i];
+		}
+	}
+	console.log("максимальный массив "+max);
+	console.log("сумма максимального массива "+maxSum);
+}
+
+maxArr(5);
 
 
-// let max = 0;
-// let NumMax = 0;
-// let ArrMax = [];
-// for ( i = 0; i < 5; i++) {
-// 	console.log(sumArr(getRandomArr(i)));
-// 	if (sumArr(getRandomArr(i)) > max) {
-// 		max = sumArr(getRandomArr(i));
-// 		ArrMax = getRandomArr(i);
-// 	}
-// 	console.log(ArrMax);
-// }
 
