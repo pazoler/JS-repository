@@ -28,24 +28,22 @@ console.log(range(2,15,2));
 //Задание 3
 
 function countDay(num) {
-	if (num%100 === 12 || 13 || 14) {
+	if (num%100 >= 12 && num%100 >= 14) {
 		return num + " Дней";
-	}
-	else if (num%10 === 1) {
+	} else if (num%10 == 1) {
 		return num + " День";
-	}
-
-	if (num%10 == 2 || 3 || 4) {
+	} else if (num%10 >= 2 && num%10 <=4 ) {
 		return num + " Дня";
-	} else if (num%10 == 5 || 6 || 7 || 8 || 9 ||0) {
+	} else if (num%10 >= 5 && num%10 <= 9 && num%10 == 0) {
 		return num + " Дней";
 	}
 }
 
 //Не пониманию, почему не работает
-console.log(152);
+console.log(countDay(151));
 console.log(countDay(2));
 console.log(countDay(548));
+console.log(countDay(4));
 
 //Задание 4
 function getRandomArr(length=4, min=0, max=10) {
