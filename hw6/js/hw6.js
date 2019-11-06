@@ -66,12 +66,12 @@ function generateTable(arr) {
   {
     let row = table.insertRow(i);
     let arrValue = Object.values(arr[i]);
-    let arrKey = Object.keys(arr[i]);
+    let arrKey = Object.getOwnPropertyNames(arr[i]);
     for (n = 0; n < arrValue.length; n++)
     {
       if (i == 0) {
       let cell = row.insertCell(n);
-      cell.innerText = arrKey[n];
+      cell.innerText = arrKey[n].toUpperCase();
       console.log(arrKey[n]);
       row.append(cell);
       } else 
