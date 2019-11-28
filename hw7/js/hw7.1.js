@@ -92,24 +92,28 @@ function generateTable(arr) {
  
   div.append(table);
   document.body.prepend(div);
-}
-generateTable(goods);
+
 
 let firstRow = document.getElementById("firstRow");
 firstRow.addEventListener("click", sortTable);
 
-let newTable = [];
+
 function sortTable (event) {
 let clickElem = event.target;
 //для получения содержимого - textContent
-console.log(clickElem);
 let sorted = clickElem.textContent.toLowerCase();
 console.log(sorted);
 
-newTable = goods.sort((a, b) => (a.sorted > b.sorted) ? -1 : ((b.sorted > a.sorted) ? 1 :0));
-generateTable(newTable);
+newTable = arr.sort((a, b) => a[sorted] > b[sorted] ? 1 : a[sorted] < b[sorted] ? -1 : 0);
+    table.remove();
+    generateTable(newTable);
+}
 }
 
+
+
+
+generateTable(goods);
 
 
 
